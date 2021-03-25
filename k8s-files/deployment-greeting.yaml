@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: greeting
+  name: greeting
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: greeting
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: greeting
+    spec:
+      containers:
+      - image: kasamajay/greeting-service:0.1.2
+        name: greeting-service
+        resources: {}
+status: {}
